@@ -1,0 +1,605 @@
+// 三语翻译映射表（简体中文、繁体中文、英语）
+// 数据结构：{ simplified: '简体中文', traditional: '繁體中文', english: 'English' }
+const translations = [
+  // ========== 流放之路2 (Path of Exile 2) 装备词条 ==========
+  // 基础属性
+  { simplified: '生命', traditional: '生命', english: 'Life' },
+  { simplified: '能量护盾', traditional: '能量護盾', english: 'Energy Shield' },
+  { simplified: '护甲', traditional: '護甲', english: 'Armour' },
+  { simplified: '闪避', traditional: '閃避', english: 'Evasion' },
+  { simplified: '力量', traditional: '力量', english: 'Strength' },
+  { simplified: '敏捷', traditional: '敏捷', english: 'Dexterity' },
+  { simplified: '智力', traditional: '智力', english: 'Intelligence' },
+  
+  // 伤害相关
+  { simplified: '物理伤害', traditional: '物理傷害', english: 'Physical Damage' },
+  { simplified: '火焰伤害', traditional: '火焰傷害', english: 'Fire Damage' },
+  { simplified: '冰冷伤害', traditional: '冰冷傷害', english: 'Cold Damage' },
+  { simplified: '闪电伤害', traditional: '閃電傷害', english: 'Lightning Damage' },
+  { simplified: '混沌伤害', traditional: '混沌傷害', english: 'Chaos Damage' },
+  { simplified: '元素伤害', traditional: '元素傷害', english: 'Elemental Damage' },
+  { simplified: '攻击伤害', traditional: '攻擊傷害', english: 'Attack Damage' },
+  { simplified: '法术伤害', traditional: '法術傷害', english: 'Spell Damage' },
+  { simplified: '伤害', traditional: '傷害', english: 'Damage' },
+  { simplified: '增加伤害', traditional: '增加傷害', english: 'Increased Damage' },
+  { simplified: '更多伤害', traditional: '更多傷害', english: 'More Damage' },
+  
+  // 攻击速度
+  { simplified: '攻击速度', traditional: '攻擊速度', english: 'Attack Speed' },
+  { simplified: '施法速度', traditional: '施法速度', english: 'Cast Speed' },
+  { simplified: '移动速度', traditional: '移動速度', english: 'Movement Speed' },
+  
+  // 抗性
+  { simplified: '火焰抗性', traditional: '火焰抗性', english: 'Fire Resistance' },
+  { simplified: '冰冷抗性', traditional: '冰冷抗性', english: 'Cold Resistance' },
+  { simplified: '闪电抗性', traditional: '閃電抗性', english: 'Lightning Resistance' },
+  { simplified: '混沌抗性', traditional: '混沌抗性', english: 'Chaos Resistance' },
+  { simplified: '元素抗性', traditional: '元素抗性', english: 'Elemental Resistance' },
+  { simplified: '所有抗性', traditional: '所有抗性', english: 'All Resistances' },
+  
+  // 暴击
+  { simplified: '暴击率', traditional: '暴擊率', english: 'Critical Strike Chance' },
+  { simplified: '暴击伤害', traditional: '暴擊傷害', english: 'Critical Strike Damage' },
+  { simplified: '暴击伤害加成', traditional: '暴擊傷害加成', english: 'Critical Strike Multiplier' },
+  
+  // 命中与闪避
+  { simplified: '命中值', traditional: '命中值', english: 'Accuracy Rating' },
+  { simplified: '闪避值', traditional: '閃避值', english: 'Evasion Rating' },
+  { simplified: '护甲值', traditional: '護甲值', english: 'Armour Rating' },
+  
+  // 生命与能量
+  { simplified: '最大生命', traditional: '最大生命', english: 'Maximum Life' },
+  { simplified: '最大能量护盾', traditional: '最大能量護盾', english: 'Maximum Energy Shield' },
+  { simplified: '生命回复', traditional: '生命回復', english: 'Life Regeneration' },
+  { simplified: '能量护盾回复', traditional: '能量護盾回復', english: 'Energy Shield Recharge' },
+  
+  // 技能相关
+  { simplified: '技能等级', traditional: '技能等級', english: 'Skill Level' },
+  { simplified: '技能石等级', traditional: '技能石等級', english: 'Gem Level' },
+  { simplified: '技能效果持续时间', traditional: '技能效果持續時間', english: 'Skill Effect Duration' },
+  { simplified: '技能范围', traditional: '技能範圍', english: 'Area of Effect' },
+  
+  // 稀有度与品质
+  { simplified: '物品稀有度', traditional: '物品稀有度', english: 'Item Rarity' },
+  { simplified: '物品数量', traditional: '物品數量', english: 'Item Quantity' },
+  { simplified: '品质', traditional: '品質', english: 'Quality' },
+  
+  // 其他常见词条
+  { simplified: '需求等级', traditional: '需求等級', english: 'Required Level' },
+  { simplified: '需求力量', traditional: '需求力量', english: 'Required Strength' },
+  { simplified: '需求敏捷', traditional: '需求敏捷', english: 'Required Dexterity' },
+  { simplified: '需求智力', traditional: '需求智力', english: 'Required Intelligence' },
+  { simplified: '武器范围', traditional: '武器範圍', english: 'Weapon Range' },
+  { simplified: '攻击范围', traditional: '攻擊範圍', english: 'Attack Range' },
+  { simplified: '格挡率', traditional: '格擋率', english: 'Block Chance' },
+  { simplified: '格挡恢复', traditional: '格擋恢復', english: 'Block Recovery' },
+  { simplified: '眩晕恢复', traditional: '眩暈恢復', english: 'Stun Recovery' },
+  { simplified: '魔力消耗', traditional: '魔力消耗', english: 'Mana Cost' },
+  { simplified: '魔力保留', traditional: '魔力保留', english: 'Mana Reservation' },
+  { simplified: '最大魔力', traditional: '最大魔力', english: 'Maximum Mana' },
+  { simplified: '魔力回复', traditional: '魔力回復', english: 'Mana Regeneration' },
+  
+  // 更多伤害相关词条
+  { simplified: '近战伤害', traditional: '近戰傷害', english: 'Melee Damage' },
+  { simplified: '远程伤害', traditional: '遠程傷害', english: 'Ranged Damage' },
+  { simplified: '投射物伤害', traditional: '投射物傷害', english: 'Projectile Damage' },
+  { simplified: '持续伤害', traditional: '持續傷害', english: 'Damage Over Time' },
+  { simplified: '点燃伤害', traditional: '點燃傷害', english: 'Ignite Damage' },
+  { simplified: '中毒伤害', traditional: '中毒傷害', english: 'Poison Damage' },
+  { simplified: '流血伤害', traditional: '流血傷害', english: 'Bleeding Damage' },
+  { simplified: '感电伤害', traditional: '感電傷害', english: 'Shock Damage' },
+  { simplified: '冰冻伤害', traditional: '冰凍傷害', english: 'Freeze Damage' },
+  { simplified: '燃烧伤害', traditional: '燃燒傷害', english: 'Burning Damage' },
+  { simplified: '总伤害', traditional: '總傷害', english: 'Total Damage' },
+  { simplified: '最小伤害', traditional: '最小傷害', english: 'Minimum Damage' },
+  { simplified: '最大伤害', traditional: '最大傷害', english: 'Maximum Damage' },
+  { simplified: '伤害加成', traditional: '傷害加成', english: 'Damage Bonus' },
+  { simplified: '穿透伤害', traditional: '穿透傷害', english: 'Penetration Damage' },
+  
+  // 防御类详细词条
+  { simplified: '物理伤害减免', traditional: '物理傷害減免', english: 'Physical Damage Reduction' },
+  { simplified: '元素伤害减免', traditional: '元素傷害減免', english: 'Elemental Damage Reduction' },
+  { simplified: '混沌伤害减免', traditional: '混沌傷害減免', english: 'Chaos Damage Reduction' },
+  { simplified: '伤害减免', traditional: '傷害減免', english: 'Damage Reduction' },
+  { simplified: '护体', traditional: '護體', english: 'Fortify' },
+  { simplified: '护体效果', traditional: '護體效果', english: 'Fortify Effect' },
+  { simplified: '护体持续时间', traditional: '護體持續時間', english: 'Fortify Duration' },
+  { simplified: '格挡伤害', traditional: '格擋傷害', english: 'Block Damage' },
+  { simplified: '格挡恢复速度', traditional: '格擋恢復速度', english: 'Block Recovery Speed' },
+  { simplified: '眩晕阈值', traditional: '眩暈閾值', english: 'Stun Threshold' },
+  { simplified: '避免眩晕', traditional: '避免眩暈', english: 'Avoid Stun' },
+  { simplified: '避免被眩晕', traditional: '避免被眩暈', english: 'Avoid Being Stunned' },
+  
+  // 生命和能量相关
+  { simplified: '生命偷取', traditional: '生命偷取', english: 'Life Leech' },
+  { simplified: '生命偷取率', traditional: '生命偷取率', english: 'Life Leech Rate' },
+  { simplified: '能量护盾偷取', traditional: '能量護盾偷取', english: 'Energy Shield Leech' },
+  { simplified: '能量护盾偷取率', traditional: '能量護盾偷取率', english: 'Energy Shield Leech Rate' },
+  { simplified: '生命回复速度', traditional: '生命回復速度', english: 'Life Regeneration Rate' },
+  { simplified: '能量护盾回复速度', traditional: '能量護盾回復速度', english: 'Energy Shield Recharge Rate' },
+  { simplified: '能量护盾回复延迟', traditional: '能量護盾回復延遲', english: 'Energy Shield Recharge Delay' },
+  { simplified: '生命上限', traditional: '生命上限', english: 'Life Maximum' },
+  { simplified: '能量护盾上限', traditional: '能量護盾上限', english: 'Energy Shield Maximum' },
+  { simplified: '生命百分比', traditional: '生命百分比', english: 'Life Percentage' },
+  { simplified: '能量护盾百分比', traditional: '能量護盾百分比', english: 'Energy Shield Percentage' },
+  
+  // 状态效果
+  { simplified: '点燃几率', traditional: '點燃機率', english: 'Chance to Ignite' },
+  { simplified: '冰冻几率', traditional: '冰凍機率', english: 'Chance to Freeze' },
+  { simplified: '感电几率', traditional: '感電機率', english: 'Chance to Shock' },
+  { simplified: '中毒几率', traditional: '中毒機率', english: 'Chance to Poison' },
+  { simplified: '流血几率', traditional: '流血機率', english: 'Chance to Bleed' },
+  { simplified: '眩晕几率', traditional: '眩暈機率', english: 'Chance to Stun' },
+  { simplified: '致盲几率', traditional: '致盲機率', english: 'Chance to Blind' },
+  { simplified: '嘲讽几率', traditional: '嘲諷機率', english: 'Chance to Taunt' },
+  { simplified: '恐惧几率', traditional: '恐懼機率', english: 'Chance to Fear' },
+  { simplified: '点燃持续时间', traditional: '點燃持續時間', english: 'Ignite Duration' },
+  { simplified: '冰冻持续时间', traditional: '冰凍持續時間', english: 'Freeze Duration' },
+  { simplified: '感电持续时间', traditional: '感電持續時間', english: 'Shock Duration' },
+  { simplified: '中毒持续时间', traditional: '中毒持續時間', english: 'Poison Duration' },
+  { simplified: '流血持续时间', traditional: '流血持續時間', english: 'Bleeding Duration' },
+  
+  // 技能和辅助相关
+  { simplified: '辅助技能等级', traditional: '輔助技能等級', english: 'Support Gem Level' },
+  { simplified: '辅助技能效果', traditional: '輔助技能效果', english: 'Support Gem Effect' },
+  { simplified: '技能冷却时间', traditional: '技能冷卻時間', english: 'Skill Cooldown' },
+  { simplified: '技能冷却恢复速度', traditional: '技能冷卻恢復速度', english: 'Skill Cooldown Recovery' },
+  { simplified: '技能消耗', traditional: '技能消耗', english: 'Skill Cost' },
+  { simplified: '技能范围扩大', traditional: '技能範圍擴大', english: 'Increased Area of Effect' },
+  { simplified: '技能范围', traditional: '技能範圍', english: 'Area Radius' },
+  { simplified: '投射物数量', traditional: '投射物數量', english: 'Projectile Count' },
+  { simplified: '投射物速度', traditional: '投射物速度', english: 'Projectile Speed' },
+  { simplified: '连锁次数', traditional: '連鎖次數', english: 'Chain Count' },
+  { simplified: '穿透次数', traditional: '穿透次數', english: 'Pierce Count' },
+  { simplified: '分裂数量', traditional: '分裂數量', english: 'Fork Count' },
+  
+  // 装备类型和属性
+  { simplified: '武器伤害', traditional: '武器傷害', english: 'Weapon Damage' },
+  { simplified: '武器范围', traditional: '武器範圍', english: 'Weapon Range' },
+  { simplified: '武器速度', traditional: '武器速度', english: 'Weapon Speed' },
+  { simplified: '双手武器伤害', traditional: '雙手武器傷害', english: 'Two Handed Weapon Damage' },
+  { simplified: '单手武器伤害', traditional: '單手武器傷害', english: 'One Handed Weapon Damage' },
+  { simplified: '主手武器伤害', traditional: '主手武器傷害', english: 'Main Hand Weapon Damage' },
+  { simplified: '副手武器伤害', traditional: '副手武器傷害', english: 'Off Hand Weapon Damage' },
+  { simplified: '盾牌格挡率', traditional: '盾牌格擋率', english: 'Shield Block Chance' },
+  { simplified: '盾牌护甲', traditional: '盾牌護甲', english: 'Shield Armour' },
+  { simplified: '盾牌能量护盾', traditional: '盾牌能量護盾', english: 'Shield Energy Shield' },
+  { simplified: '护甲能量护盾', traditional: '護甲能量護盾', english: 'Armour Energy Shield' },
+  { simplified: '护甲闪避', traditional: '護甲閃避', english: 'Armour Evasion' },
+  { simplified: '闪避能量护盾', traditional: '閃避能量護盾', english: 'Evasion Energy Shield' },
+  
+  // 数值和百分比
+  { simplified: '增加', traditional: '增加', english: 'Increased' },
+  { simplified: '减少', traditional: '減少', english: 'Reduced' },
+  { simplified: '更多', traditional: '更多', english: 'More' },
+  { simplified: '更少', traditional: '更少', english: 'Less' },
+  { simplified: '百分比', traditional: '百分比', english: 'Percentage' },
+  { simplified: '固定值', traditional: '固定值', english: 'Flat Value' },
+  { simplified: '最小值', traditional: '最小值', english: 'Minimum Value' },
+  { simplified: '最大值', traditional: '最大值', english: 'Maximum Value' },
+  { simplified: '基础值', traditional: '基礎值', english: 'Base Value' },
+  { simplified: '加成值', traditional: '加成值', english: 'Bonus Value' },
+  
+  // 特殊效果和机制
+  { simplified: '反射伤害', traditional: '反射傷害', english: 'Reflect Damage' },
+  { simplified: '反弹伤害', traditional: '反彈傷害', english: 'Return Damage' },
+  { simplified: '反弹投射物', traditional: '反彈投射物', english: 'Return Projectiles' },
+  { simplified: '穿透抗性', traditional: '穿透抗性', english: 'Penetration Resistance' },
+  { simplified: '穿透元素抗性', traditional: '穿透元素抗性', english: 'Penetration Elemental Resistance' },
+  { simplified: '无视抗性', traditional: '無視抗性', english: 'Ignore Resistance' },
+  { simplified: '降低抗性', traditional: '降低抗性', english: 'Lower Resistance' },
+  { simplified: '暴露', traditional: '暴露', english: 'Exposure' },
+  { simplified: '暴露效果', traditional: '暴露效果', english: 'Exposure Effect' },
+  { simplified: '诅咒效果', traditional: '詛咒效果', english: 'Curse Effect' },
+  { simplified: '诅咒持续时间', traditional: '詛咒持續時間', english: 'Curse Duration' },
+  { simplified: '光环效果', traditional: '光環效果', english: 'Aura Effect' },
+  { simplified: '光环范围', traditional: '光環範圍', english: 'Aura Radius' },
+  { simplified: '图腾效果', traditional: '圖騰效果', english: 'Totem Effect' },
+  { simplified: '图腾生命', traditional: '圖騰生命', english: 'Totem Life' },
+  { simplified: '召唤物伤害', traditional: '召喚物傷害', english: 'Minion Damage' },
+  { simplified: '召唤物生命', traditional: '召喚物生命', english: 'Minion Life' },
+  { simplified: '召唤物速度', traditional: '召喚物速度', english: 'Minion Speed' },
+  { simplified: '召唤物数量', traditional: '召喚物數量', english: 'Minion Count' },
+  
+  // 移动和行动
+  { simplified: '移动速度加成', traditional: '移動速度加成', english: 'Movement Speed Bonus' },
+  { simplified: '冲刺速度', traditional: '衝刺速度', english: 'Dash Speed' },
+  { simplified: '冲刺距离', traditional: '衝刺距離', english: 'Dash Distance' },
+  { simplified: '冲刺冷却', traditional: '衝刺冷卻', english: 'Dash Cooldown' },
+  { simplified: '跳跃距离', traditional: '跳躍距離', english: 'Jump Distance' },
+  { simplified: '跳跃速度', traditional: '跳躍速度', english: 'Jump Speed' },
+  { simplified: '行动速度', traditional: '行動速度', english: 'Action Speed' },
+  { simplified: '攻击速度加成', traditional: '攻擊速度加成', english: 'Attack Speed Bonus' },
+  { simplified: '施法速度加成', traditional: '施法速度加成', english: 'Cast Speed Bonus' },
+  
+  // 资源和消耗
+  { simplified: '魔力消耗减少', traditional: '魔力消耗減少', english: 'Reduced Mana Cost' },
+  { simplified: '魔力消耗增加', traditional: '魔力消耗增加', english: 'Increased Mana Cost' },
+  { simplified: '生命消耗', traditional: '生命消耗', english: 'Life Cost' },
+  { simplified: '能量护盾消耗', traditional: '能量護盾消耗', english: 'Energy Shield Cost' },
+  { simplified: '生命保留', traditional: '生命保留', english: 'Life Reservation' },
+  { simplified: '能量护盾保留', traditional: '能量護盾保留', english: 'Energy Shield Reservation' },
+  { simplified: '保留效率', traditional: '保留效率', english: 'Reservation Efficiency' },
+  { simplified: '魔力效率', traditional: '魔力效率', english: 'Mana Efficiency' },
+  
+  // 物品和掉落
+  { simplified: '物品稀有度增加', traditional: '物品稀有度增加', english: 'Increased Item Rarity' },
+  { simplified: '物品数量增加', traditional: '物品數量增加', english: 'Increased Item Quantity' },
+  { simplified: '货币掉落', traditional: '貨幣掉落', english: 'Currency Drop' },
+  { simplified: '装备掉落', traditional: '裝備掉落', english: 'Equipment Drop' },
+  { simplified: '传奇物品掉落', traditional: '傳奇物品掉落', english: 'Unique Item Drop' },
+  { simplified: '传奇物品几率', traditional: '傳奇物品機率', english: 'Unique Item Chance' },
+  { simplified: '稀有物品几率', traditional: '稀有物品機率', english: 'Rare Item Chance' },
+  { simplified: '魔法物品几率', traditional: '魔法物品機率', english: 'Magic Item Chance' },
+  
+  // 经验和等级
+  { simplified: '经验获得', traditional: '經驗獲得', english: 'Experience Gain' },
+  { simplified: '经验加成', traditional: '經驗加成', english: 'Experience Bonus' },
+  { simplified: '经验惩罚', traditional: '經驗懲罰', english: 'Experience Penalty' },
+  { simplified: '等级需求降低', traditional: '等級需求降低', english: 'Reduced Level Requirement' },
+  { simplified: '属性需求降低', traditional: '屬性需求降低', english: 'Reduced Attribute Requirement' },
+  
+  // 其他特殊词条
+  { simplified: '免疫', traditional: '免疫', english: 'Immunity' },
+  { simplified: '免疫点燃', traditional: '免疫點燃', english: 'Immune to Ignite' },
+  { simplified: '免疫冰冻', traditional: '免疫冰凍', english: 'Immune to Freeze' },
+  { simplified: '免疫感电', traditional: '免疫感電', english: 'Immune to Shock' },
+  { simplified: '免疫中毒', traditional: '免疫中毒', english: 'Immune to Poison' },
+  { simplified: '免疫流血', traditional: '免疫流血', english: 'Immune to Bleeding' },
+  { simplified: '免疫眩晕', traditional: '免疫眩暈', english: 'Immune to Stun' },
+  { simplified: '免疫诅咒', traditional: '免疫詛咒', english: 'Immune to Curses' },
+  { simplified: '免疫元素状态', traditional: '免疫元素狀態', english: 'Immune to Elemental Ailments' },
+  { simplified: '避免元素状态', traditional: '避免元素狀態', english: 'Avoid Elemental Ailments' },
+  { simplified: '避免诅咒', traditional: '避免詛咒', english: 'Avoid Curses' },
+  { simplified: '反射诅咒', traditional: '反射詛咒', english: 'Reflect Curses' },
+  { simplified: '诅咒免疫', traditional: '詛咒免疫', english: 'Curse Immunity' },
+  
+  // 更多伤害类型和效果
+  { simplified: '对燃烧敌人伤害', traditional: '對燃燒敵人傷害', english: 'Damage to Burning Enemies' },
+  { simplified: '对冰冻敌人伤害', traditional: '對冰凍敵人傷害', english: 'Damage to Frozen Enemies' },
+  { simplified: '对感电敌人伤害', traditional: '對感電敵人傷害', english: 'Damage to Shocked Enemies' },
+  { simplified: '对中毒敌人伤害', traditional: '對中毒敵人傷害', english: 'Damage to Poisoned Enemies' },
+  { simplified: '对流血敌人伤害', traditional: '對流血敵人傷害', english: 'Damage to Bleeding Enemies' },
+  { simplified: '对低生命敌人伤害', traditional: '對低生命敵人傷害', english: 'Damage to Enemies on Low Life' },
+  { simplified: '对满血敌人伤害', traditional: '對滿血敵人傷害', english: 'Damage to Enemies on Full Life' },
+  { simplified: '对满能量护盾敌人伤害', traditional: '對滿能量護盾敵人傷害', english: 'Damage to Enemies on Full Energy Shield' },
+  { simplified: '对近战敌人伤害', traditional: '對近戰敵人傷害', english: 'Damage to Melee Enemies' },
+  { simplified: '对远程敌人伤害', traditional: '對遠程敵人傷害', english: 'Damage to Ranged Enemies' },
+  { simplified: '对BOSS伤害', traditional: '對BOSS傷害', english: 'Damage to Bosses' },
+  { simplified: '对稀有敌人伤害', traditional: '對稀有敵人傷害', english: 'Damage to Rare Enemies' },
+  { simplified: '对传奇敌人伤害', traditional: '對傳奇敵人傷害', english: 'Damage to Unique Enemies' },
+  { simplified: '对普通敌人伤害', traditional: '對普通敵人傷害', english: 'Damage to Normal Enemies' },
+  
+  // 条件伤害加成
+  { simplified: '低生命时伤害', traditional: '低生命時傷害', english: 'Damage when on Low Life' },
+  { simplified: '满血时伤害', traditional: '滿血時傷害', english: 'Damage when on Full Life' },
+  { simplified: '满能量护盾时伤害', traditional: '滿能量護盾時傷害', english: 'Damage when on Full Energy Shield' },
+  { simplified: '能量护盾耗尽时伤害', traditional: '能量護盾耗盡時傷害', english: 'Damage when Energy Shield is Depleted' },
+  { simplified: '被击中时伤害', traditional: '被擊中時傷害', english: 'Damage when Hit' },
+  { simplified: '击杀时伤害', traditional: '擊殺時傷害', english: 'Damage on Kill' },
+  { simplified: '使用技能时伤害', traditional: '使用技能時傷害', english: 'Damage when Using Skills' },
+  { simplified: '移动时伤害', traditional: '移動時傷害', english: 'Damage while Moving' },
+  { simplified: '静止时伤害', traditional: '靜止時傷害', english: 'Damage while Stationary' },
+  { simplified: '格挡时伤害', traditional: '格擋時傷害', english: 'Damage on Block' },
+  
+  // 武器和装备基础属性
+  { simplified: '物理伤害加成', traditional: '物理傷害加成', english: 'Physical Damage Bonus' },
+  { simplified: '元素伤害加成', traditional: '元素傷害加成', english: 'Elemental Damage Bonus' },
+  { simplified: '混沌伤害加成', traditional: '混沌傷害加成', english: 'Chaos Damage Bonus' },
+  { simplified: '武器元素伤害', traditional: '武器元素傷害', english: 'Weapon Elemental Damage' },
+  { simplified: '武器物理伤害', traditional: '武器物理傷害', english: 'Weapon Physical Damage' },
+  { simplified: '武器攻击速度', traditional: '武器攻擊速度', english: 'Weapon Attack Speed' },
+  { simplified: '武器暴击率', traditional: '武器暴擊率', english: 'Weapon Critical Strike Chance' },
+  { simplified: '武器暴击伤害', traditional: '武器暴擊傷害', english: 'Weapon Critical Strike Damage' },
+  { simplified: '武器范围加成', traditional: '武器範圍加成', english: 'Weapon Range Bonus' },
+  
+  // 护甲和防御详细
+  { simplified: '护甲百分比', traditional: '護甲百分比', english: 'Armour Percentage' },
+  { simplified: '闪避百分比', traditional: '閃避百分比', english: 'Evasion Percentage' },
+  { simplified: '能量护盾百分比', traditional: '能量護盾百分比', english: 'Energy Shield Percentage' },
+  { simplified: '护甲和能量护盾', traditional: '護甲和能量護盾', english: 'Armour and Energy Shield' },
+  { simplified: '闪避和能量护盾', traditional: '閃避和能量護盾', english: 'Evasion and Energy Shield' },
+  { simplified: '护甲和闪避', traditional: '護甲和閃避', english: 'Armour and Evasion' },
+  { simplified: '护甲闪避和能量护盾', traditional: '護甲閃避和能量護盾', english: 'Armour Evasion and Energy Shield' },
+  { simplified: '基础护甲', traditional: '基礎護甲', english: 'Base Armour' },
+  { simplified: '基础闪避', traditional: '基礎閃避', english: 'Base Evasion' },
+  { simplified: '基础能量护盾', traditional: '基礎能量護盾', english: 'Base Energy Shield' },
+  
+  // 抗性详细
+  { simplified: '最大火焰抗性', traditional: '最大火焰抗性', english: 'Maximum Fire Resistance' },
+  { simplified: '最大冰冷抗性', traditional: '最大冰冷抗性', english: 'Maximum Cold Resistance' },
+  { simplified: '最大闪电抗性', traditional: '最大閃電抗性', english: 'Maximum Lightning Resistance' },
+  { simplified: '最大混沌抗性', traditional: '最大混沌抗性', english: 'Maximum Chaos Resistance' },
+  { simplified: '最大元素抗性', traditional: '最大元素抗性', english: 'Maximum Elemental Resistance' },
+  { simplified: '最大所有抗性', traditional: '最大所有抗性', english: 'Maximum All Resistances' },
+  { simplified: '抗性上限', traditional: '抗性上限', english: 'Resistance Cap' },
+  { simplified: '抗性穿透', traditional: '抗性穿透', english: 'Resistance Penetration' },
+  { simplified: '火焰抗性穿透', traditional: '火焰抗性穿透', english: 'Fire Resistance Penetration' },
+  { simplified: '冰冷抗性穿透', traditional: '冰冷抗性穿透', english: 'Cold Resistance Penetration' },
+  { simplified: '闪电抗性穿透', traditional: '閃電抗性穿透', english: 'Lightning Resistance Penetration' },
+  { simplified: '元素抗性穿透', traditional: '元素抗性穿透', english: 'Elemental Resistance Penetration' },
+  
+  // 暴击详细
+  { simplified: '基础暴击率', traditional: '基礎暴擊率', english: 'Base Critical Strike Chance' },
+  { simplified: '暴击率加成', traditional: '暴擊率加成', english: 'Critical Strike Chance Bonus' },
+  { simplified: '暴击伤害加成', traditional: '暴擊傷害加成', english: 'Critical Strike Damage Bonus' },
+  { simplified: '暴击伤害倍数', traditional: '暴擊傷害倍數', english: 'Critical Strike Multiplier' },
+  { simplified: '暴击几率', traditional: '暴擊機率', english: 'Critical Strike Probability' },
+  { simplified: '法术暴击率', traditional: '法術暴擊率', english: 'Spell Critical Strike Chance' },
+  { simplified: '攻击暴击率', traditional: '攻擊暴擊率', english: 'Attack Critical Strike Chance' },
+  { simplified: '暴击时获得', traditional: '暴擊時獲得', english: 'On Critical Strike Gain' },
+  { simplified: '暴击时触发', traditional: '暴擊時觸發', english: 'Trigger on Critical Strike' },
+  
+  // 命中和准确度
+  { simplified: '命中值加成', traditional: '命中值加成', english: 'Accuracy Rating Bonus' },
+  { simplified: '命中几率', traditional: '命中機率', english: 'Hit Chance' },
+  { simplified: '无法被闪避', traditional: '無法被閃避', english: 'Cannot be Evaded' },
+  { simplified: '总是命中', traditional: '總是命中', english: 'Always Hit' },
+  { simplified: '命中时获得', traditional: '命中時獲得', english: 'On Hit Gain' },
+  { simplified: '命中时触发', traditional: '命中時觸發', english: 'Trigger on Hit' },
+  
+  // 闪避和躲避
+  { simplified: '闪避值加成', traditional: '閃避值加成', english: 'Evasion Rating Bonus' },
+  { simplified: '闪避几率', traditional: '閃避機率', english: 'Evasion Chance' },
+  { simplified: '躲避攻击', traditional: '躲避攻擊', english: 'Dodge Attacks' },
+  { simplified: '躲避法术', traditional: '躲避法術', english: 'Dodge Spells' },
+  { simplified: '躲避攻击伤害', traditional: '躲避攻擊傷害', english: 'Dodge Attack Damage' },
+  { simplified: '躲避法术伤害', traditional: '躲避法術傷害', english: 'Dodge Spell Damage' },
+  { simplified: '躲避几率', traditional: '躲避機率', english: 'Dodge Chance' },
+  { simplified: '攻击躲避', traditional: '攻擊躲避', english: 'Attack Dodge' },
+  { simplified: '法术躲避', traditional: '法術躲避', english: 'Spell Dodge' },
+  
+  // 格挡详细
+  { simplified: '攻击格挡率', traditional: '攻擊格擋率', english: 'Attack Block Chance' },
+  { simplified: '法术格挡率', traditional: '法術格擋率', english: 'Spell Block Chance' },
+  { simplified: '格挡时获得', traditional: '格擋時獲得', english: 'On Block Gain' },
+  { simplified: '格挡时触发', traditional: '格擋時觸發', english: 'Trigger on Block' },
+  { simplified: '格挡恢复速度加成', traditional: '格擋恢復速度加成', english: 'Block Recovery Speed Bonus' },
+  { simplified: '格挡伤害减免', traditional: '格擋傷害減免', english: 'Block Damage Reduction' },
+  
+  // 生命和能量详细
+  { simplified: '生命加成', traditional: '生命加成', english: 'Life Bonus' },
+  { simplified: '能量护盾加成', traditional: '能量護盾加成', english: 'Energy Shield Bonus' },
+  { simplified: '生命和能量护盾', traditional: '生命和能量護盾', english: 'Life and Energy Shield' },
+  { simplified: '生命回复加成', traditional: '生命回復加成', english: 'Life Regeneration Bonus' },
+  { simplified: '能量护盾回复加成', traditional: '能量護盾回復加成', english: 'Energy Shield Recharge Bonus' },
+  { simplified: '生命偷取加成', traditional: '生命偷取加成', english: 'Life Leech Bonus' },
+  { simplified: '能量护盾偷取加成', traditional: '能量護盾偷取加成', english: 'Energy Shield Leech Bonus' },
+  { simplified: '生命回复速度加成', traditional: '生命回復速度加成', english: 'Life Regeneration Rate Bonus' },
+  { simplified: '能量护盾回复速度加成', traditional: '能量護盾回復速度加成', english: 'Energy Shield Recharge Rate Bonus' },
+  { simplified: '能量护盾回复延迟减少', traditional: '能量護盾回復延遲減少', english: 'Reduced Energy Shield Recharge Delay' },
+  
+  // 属性和需求
+  { simplified: '力量加成', traditional: '力量加成', english: 'Strength Bonus' },
+  { simplified: '敏捷加成', traditional: '敏捷加成', english: 'Dexterity Bonus' },
+  { simplified: '智力加成', traditional: '智力加成', english: 'Intelligence Bonus' },
+  { simplified: '所有属性', traditional: '所有屬性', english: 'All Attributes' },
+  { simplified: '所有属性加成', traditional: '所有屬性加成', english: 'All Attributes Bonus' },
+  { simplified: '力量需求', traditional: '力量需求', english: 'Strength Requirement' },
+  { simplified: '敏捷需求', traditional: '敏捷需求', english: 'Dexterity Requirement' },
+  { simplified: '智力需求', traditional: '智力需求', english: 'Intelligence Requirement' },
+  { simplified: '等级需求', traditional: '等級需求', english: 'Level Requirement' },
+  
+  // 技能石和辅助
+  { simplified: '技能石等级加成', traditional: '技能石等級加成', english: 'Gem Level Bonus' },
+  { simplified: '所有技能石等级', traditional: '所有技能石等級', english: 'All Gem Levels' },
+  { simplified: '法术技能石等级', traditional: '法術技能石等級', english: 'Spell Gem Level' },
+  { simplified: '攻击技能石等级', traditional: '攻擊技能石等級', english: 'Attack Gem Level' },
+  { simplified: '辅助技能石等级', traditional: '輔助技能石等級', english: 'Support Gem Level' },
+  { simplified: '技能石品质', traditional: '技能石品質', english: 'Gem Quality' },
+  { simplified: '技能石经验获得', traditional: '技能石經驗獲得', english: 'Gem Experience Gain' },
+  
+  // 范围和区域
+  { simplified: '范围扩大', traditional: '範圍擴大', english: 'Area of Effect Increased' },
+  { simplified: '范围缩小', traditional: '範圍縮小', english: 'Area of Effect Reduced' },
+  { simplified: '范围半径', traditional: '範圍半徑', english: 'Area Radius' },
+  { simplified: '范围伤害', traditional: '範圍傷害', english: 'Area Damage' },
+  { simplified: '范围效果', traditional: '範圍效果', english: 'Area Effect' },
+  { simplified: '范围加成', traditional: '範圍加成', english: 'Area Bonus' },
+  
+  // 投射物详细
+  { simplified: '投射物伤害加成', traditional: '投射物傷害加成', english: 'Projectile Damage Bonus' },
+  { simplified: '投射物速度加成', traditional: '投射物速度加成', english: 'Projectile Speed Bonus' },
+  { simplified: '投射物数量加成', traditional: '投射物數量加成', english: 'Projectile Count Bonus' },
+  { simplified: '额外投射物', traditional: '額外投射物', english: 'Additional Projectiles' },
+  { simplified: '投射物穿透', traditional: '投射物穿透', english: 'Projectile Penetration' },
+  { simplified: '投射物连锁', traditional: '投射物連鎖', english: 'Projectile Chain' },
+  { simplified: '投射物分裂', traditional: '投射物分裂', english: 'Projectile Fork' },
+  { simplified: '投射物返回', traditional: '投射物返回', english: 'Projectile Return' },
+  { simplified: '投射物反弹', traditional: '投射物反彈', english: 'Projectile Bounce' },
+  
+  // 召唤物详细
+  { simplified: '召唤物伤害加成', traditional: '召喚物傷害加成', english: 'Minion Damage Bonus' },
+  { simplified: '召唤物生命加成', traditional: '召喚物生命加成', english: 'Minion Life Bonus' },
+  { simplified: '召唤物速度加成', traditional: '召喚物速度加成', english: 'Minion Speed Bonus' },
+  { simplified: '召唤物攻击速度', traditional: '召喚物攻擊速度', english: 'Minion Attack Speed' },
+  { simplified: '召唤物施法速度', traditional: '召喚物施法速度', english: 'Minion Cast Speed' },
+  { simplified: '召唤物移动速度', traditional: '召喚物移動速度', english: 'Minion Movement Speed' },
+  { simplified: '召唤物数量加成', traditional: '召喚物數量加成', english: 'Minion Count Bonus' },
+  { simplified: '召唤物最大生命', traditional: '召喚物最大生命', english: 'Minion Maximum Life' },
+  { simplified: '召唤物抗性', traditional: '召喚物抗性', english: 'Minion Resistance' },
+  { simplified: '召唤物元素抗性', traditional: '召喚物元素抗性', english: 'Minion Elemental Resistance' },
+  
+  // 光环和保留
+  { simplified: '光环效果加成', traditional: '光環效果加成', english: 'Aura Effect Bonus' },
+  { simplified: '光环范围加成', traditional: '光環範圍加成', english: 'Aura Radius Bonus' },
+  { simplified: '光环持续时间', traditional: '光環持續時間', english: 'Aura Duration' },
+  { simplified: '保留效率加成', traditional: '保留效率加成', english: 'Reservation Efficiency Bonus' },
+  { simplified: '魔力保留减少', traditional: '魔力保留減少', english: 'Reduced Mana Reservation' },
+  { simplified: '生命保留减少', traditional: '生命保留減少', english: 'Reduced Life Reservation' },
+  { simplified: '能量护盾保留减少', traditional: '能量護盾保留減少', english: 'Reduced Energy Shield Reservation' },
+  
+  // 诅咒详细
+  { simplified: '诅咒效果加成', traditional: '詛咒效果加成', english: 'Curse Effect Bonus' },
+  { simplified: '诅咒持续时间加成', traditional: '詛咒持續時間加成', english: 'Curse Duration Bonus' },
+  { simplified: '诅咒范围', traditional: '詛咒範圍', english: 'Curse Radius' },
+  { simplified: '诅咒数量', traditional: '詛咒數量', english: 'Curse Count' },
+  { simplified: '额外诅咒', traditional: '額外詛咒', english: 'Additional Curses' },
+  { simplified: '诅咒免疫', traditional: '詛咒免疫', english: 'Curse Immunity' },
+  { simplified: '反射诅咒几率', traditional: '反射詛咒機率', english: 'Chance to Reflect Curses' },
+  
+  // 图腾详细
+  { simplified: '图腾伤害加成', traditional: '圖騰傷害加成', english: 'Totem Damage Bonus' },
+  { simplified: '图腾生命加成', traditional: '圖騰生命加成', english: 'Totem Life Bonus' },
+  { simplified: '图腾数量', traditional: '圖騰數量', english: 'Totem Count' },
+  { simplified: '图腾放置速度', traditional: '圖騰放置速度', english: 'Totem Placement Speed' },
+  { simplified: '图腾持续时间', traditional: '圖騰持續時間', english: 'Totem Duration' },
+  { simplified: '图腾范围', traditional: '圖騰範圍', english: 'Totem Range' },
+  
+  // 陷阱和地雷
+  { simplified: '陷阱伤害', traditional: '陷阱傷害', english: 'Trap Damage' },
+  { simplified: '地雷伤害', traditional: '地雷傷害', english: 'Mine Damage' },
+  { simplified: '陷阱伤害加成', traditional: '陷阱傷害加成', english: 'Trap Damage Bonus' },
+  { simplified: '地雷伤害加成', traditional: '地雷傷害加成', english: 'Mine Damage Bonus' },
+  { simplified: '陷阱数量', traditional: '陷阱數量', english: 'Trap Count' },
+  { simplified: '地雷数量', traditional: '地雷數量', english: 'Mine Count' },
+  { simplified: '陷阱触发范围', traditional: '陷阱觸發範圍', english: 'Trap Trigger Radius' },
+  { simplified: '地雷触发范围', traditional: '地雷觸發範圍', english: 'Mine Trigger Radius' },
+  { simplified: '陷阱持续时间', traditional: '陷阱持續時間', english: 'Trap Duration' },
+  { simplified: '地雷持续时间', traditional: '地雷持續時間', english: 'Mine Duration' },
+  { simplified: '陷阱投掷速度', traditional: '陷阱投擲速度', english: 'Trap Throwing Speed' },
+  { simplified: '地雷放置速度', traditional: '地雷放置速度', english: 'Mine Placement Speed' },
+  
+  // 触发和冷却
+  { simplified: '触发几率', traditional: '觸發機率', english: 'Trigger Chance' },
+  { simplified: '触发冷却', traditional: '觸發冷卻', english: 'Trigger Cooldown' },
+  { simplified: '冷却恢复速度', traditional: '冷卻恢復速度', english: 'Cooldown Recovery Speed' },
+  { simplified: '冷却时间减少', traditional: '冷卻時間減少', english: 'Reduced Cooldown' },
+  { simplified: '技能冷却时间减少', traditional: '技能冷卻時間減少', english: 'Reduced Skill Cooldown' },
+  { simplified: '触发时施放', traditional: '觸發時施放', english: 'Cast when Triggered' },
+  { simplified: '被击中时触发', traditional: '被擊中時觸發', english: 'Trigger when Hit' },
+  { simplified: '击杀时触发', traditional: '擊殺時觸發', english: 'Trigger on Kill' },
+  { simplified: '暴击时触发', traditional: '暴擊時觸發', english: 'Trigger on Critical Strike' },
+  { simplified: '使用技能时触发', traditional: '使用技能時觸發', english: 'Trigger when Using Skills' },
+  
+  // 移动和行动详细
+  { simplified: '移动速度加成', traditional: '移動速度加成', english: 'Movement Speed Bonus' },
+  { simplified: '移动速度减少', traditional: '移動速度減少', english: 'Reduced Movement Speed' },
+  { simplified: '无法移动', traditional: '無法移動', english: 'Cannot Move' },
+  { simplified: '移动时获得', traditional: '移動時獲得', english: 'Gain while Moving' },
+  { simplified: '静止时获得', traditional: '靜止時獲得', english: 'Gain while Stationary' },
+  { simplified: '攻击速度加成', traditional: '攻擊速度加成', english: 'Attack Speed Bonus' },
+  { simplified: '攻击速度减少', traditional: '攻擊速度減少', english: 'Reduced Attack Speed' },
+  { simplified: '施法速度加成', traditional: '施法速度加成', english: 'Cast Speed Bonus' },
+  { simplified: '施法速度减少', traditional: '施法速度減少', english: 'Reduced Cast Speed' },
+  { simplified: '行动速度加成', traditional: '行動速度加成', english: 'Action Speed Bonus' },
+  { simplified: '行动速度减少', traditional: '行動速度減少', english: 'Reduced Action Speed' },
+  
+  // 消耗和效率
+  { simplified: '魔力消耗减少', traditional: '魔力消耗減少', english: 'Reduced Mana Cost' },
+  { simplified: '魔力消耗增加', traditional: '魔力消耗增加', english: 'Increased Mana Cost' },
+  { simplified: '生命消耗减少', traditional: '生命消耗減少', english: 'Reduced Life Cost' },
+  { simplified: '能量护盾消耗减少', traditional: '能量護盾消耗減少', english: 'Reduced Energy Shield Cost' },
+  { simplified: '技能消耗减少', traditional: '技能消耗減少', english: 'Reduced Skill Cost' },
+  { simplified: '消耗效率', traditional: '消耗效率', english: 'Cost Efficiency' },
+  { simplified: '魔力效率加成', traditional: '魔力效率加成', english: 'Mana Efficiency Bonus' },
+  
+  // 物品和掉落详细
+  { simplified: '物品稀有度加成', traditional: '物品稀有度加成', english: 'Item Rarity Bonus' },
+  { simplified: '物品数量加成', traditional: '物品數量加成', english: 'Item Quantity Bonus' },
+  { simplified: '货币掉落几率', traditional: '貨幣掉落機率', english: 'Currency Drop Chance' },
+  { simplified: '装备掉落几率', traditional: '裝備掉落機率', english: 'Equipment Drop Chance' },
+  { simplified: '传奇物品掉落几率', traditional: '傳奇物品掉落機率', english: 'Unique Item Drop Chance' },
+  { simplified: '稀有物品掉落几率', traditional: '稀有物品掉落機率', english: 'Rare Item Drop Chance' },
+  { simplified: '魔法物品掉落几率', traditional: '魔法物品掉落機率', english: 'Magic Item Drop Chance' },
+  { simplified: '普通物品掉落几率', traditional: '普通物品掉落機率', english: 'Normal Item Drop Chance' },
+  
+  // 经验和等级详细
+  { simplified: '经验获得加成', traditional: '經驗獲得加成', english: 'Experience Gain Bonus' },
+  { simplified: '经验获得增加', traditional: '經驗獲得增加', english: 'Increased Experience Gain' },
+  { simplified: '经验惩罚减少', traditional: '經驗懲罰減少', english: 'Reduced Experience Penalty' },
+  { simplified: '等级需求减少', traditional: '等級需求減少', english: 'Reduced Level Requirement' },
+  { simplified: '属性需求减少', traditional: '屬性需求減少', english: 'Reduced Attribute Requirement' },
+  { simplified: '力量需求减少', traditional: '力量需求減少', english: 'Reduced Strength Requirement' },
+  { simplified: '敏捷需求减少', traditional: '敏捷需求減少', english: 'Reduced Dexterity Requirement' },
+  { simplified: '智力需求减少', traditional: '智力需求減少', english: 'Reduced Intelligence Requirement' },
+  
+  // 特殊机制和效果
+  { simplified: '反射物理伤害', traditional: '反射物理傷害', english: 'Reflect Physical Damage' },
+  { simplified: '反射元素伤害', traditional: '反射元素傷害', english: 'Reflect Elemental Damage' },
+  { simplified: '反弹物理伤害', traditional: '反彈物理傷害', english: 'Return Physical Damage' },
+  { simplified: '反弹元素伤害', traditional: '反彈元素傷害', english: 'Return Elemental Damage' },
+  { simplified: '穿透物理抗性', traditional: '穿透物理抗性', english: 'Physical Resistance Penetration' },
+  { simplified: '降低火焰抗性', traditional: '降低火焰抗性', english: 'Lower Fire Resistance' },
+  { simplified: '降低冰冷抗性', traditional: '降低冰冷抗性', english: 'Lower Cold Resistance' },
+  { simplified: '降低闪电抗性', traditional: '降低閃電抗性', english: 'Lower Lightning Resistance' },
+  { simplified: '降低元素抗性', traditional: '降低元素抗性', english: 'Lower Elemental Resistance' },
+  { simplified: '降低混沌抗性', traditional: '降低混沌抗性', english: 'Lower Chaos Resistance' },
+  { simplified: '暴露火焰抗性', traditional: '暴露火焰抗性', english: 'Fire Resistance Exposure' },
+  { simplified: '暴露冰冷抗性', traditional: '暴露冰冷抗性', english: 'Cold Resistance Exposure' },
+  { simplified: '暴露闪电抗性', traditional: '暴露閃電抗性', english: 'Lightning Resistance Exposure' },
+  { simplified: '暴露元素抗性', traditional: '暴露元素抗性', english: 'Elemental Resistance Exposure' },
+  { simplified: '暴露效果', traditional: '暴露效果', english: 'Exposure Effect' },
+  
+  // 更多免疫和避免
+  { simplified: '免疫反射伤害', traditional: '免疫反射傷害', english: 'Immune to Reflected Damage' },
+  { simplified: '避免反射伤害', traditional: '避免反射傷害', english: 'Avoid Reflected Damage' },
+  { simplified: '免疫元素反射', traditional: '免疫元素反射', english: 'Immune to Elemental Reflect' },
+  { simplified: '免疫物理反射', traditional: '免疫物理反射', english: 'Immune to Physical Reflect' },
+  { simplified: '避免元素反射', traditional: '避免元素反射', english: 'Avoid Elemental Reflect' },
+  { simplified: '避免物理反射', traditional: '避免物理反射', english: 'Avoid Physical Reflect' },
+  { simplified: '免疫眩晕和击退', traditional: '免疫眩暈和擊退', english: 'Immune to Stun and Knockback' },
+  { simplified: '避免眩晕和击退', traditional: '避免眩暈和擊退', english: 'Avoid Stun and Knockback' },
+  { simplified: '免疫击退', traditional: '免疫擊退', english: 'Immune to Knockback' },
+  { simplified: '避免击退', traditional: '避免擊退', english: 'Avoid Knockback' },
+  { simplified: '免疫减速', traditional: '免疫減速', english: 'Immune to Slow' },
+  { simplified: '避免减速', traditional: '避免減速', english: 'Avoid Slow' },
+  { simplified: '免疫冰冻和冰冻效果', traditional: '免疫冰凍和冰凍效果', english: 'Immune to Freeze and Chill' },
+  { simplified: '避免冰冻和冰冻效果', traditional: '避免冰凍和冰凍效果', english: 'Avoid Freeze and Chill' },
+  
+  // 状态效果详细
+  { simplified: '冰冻效果', traditional: '冰凍效果', english: 'Chill Effect' },
+  { simplified: '冰冻效果持续时间', traditional: '冰凍效果持續時間', english: 'Chill Duration' },
+  { simplified: '冰冻效果几率', traditional: '冰凍效果機率', english: 'Chance to Chill' },
+  { simplified: '感电效果', traditional: '感電效果', english: 'Shock Effect' },
+  { simplified: '感电效果持续时间', traditional: '感電效果持續時間', english: 'Shock Duration' },
+  { simplified: '感电效果几率', traditional: '感電效果機率', english: 'Chance to Shock' },
+  { simplified: '点燃效果', traditional: '點燃效果', english: 'Ignite Effect' },
+  { simplified: '点燃效果持续时间', traditional: '點燃效果持續時間', english: 'Ignite Duration' },
+  { simplified: '点燃效果几率', traditional: '點燃效果機率', english: 'Chance to Ignite' },
+  { simplified: '中毒效果', traditional: '中毒效果', english: 'Poison Effect' },
+  { simplified: '中毒效果持续时间', traditional: '中毒效果持續時間', english: 'Poison Duration' },
+  { simplified: '中毒效果几率', traditional: '中毒效果機率', english: 'Chance to Poison' },
+  { simplified: '流血效果', traditional: '流血效果', english: 'Bleeding Effect' },
+  { simplified: '流血效果持续时间', traditional: '流血效果持續時間', english: 'Bleeding Duration' },
+  { simplified: '流血效果几率', traditional: '流血效果機率', english: 'Chance to Bleed' },
+  
+  // 特殊触发和获得
+  { simplified: '击杀时获得生命', traditional: '擊殺時獲得生命', english: 'Gain Life on Kill' },
+  { simplified: '击杀时获得能量护盾', traditional: '擊殺時獲得能量護盾', english: 'Gain Energy Shield on Kill' },
+  { simplified: '击杀时获得魔力', traditional: '擊殺時獲得魔力', english: 'Gain Mana on Kill' },
+  { simplified: '击杀时获得充能', traditional: '擊殺時獲得充能', english: 'Gain Charges on Kill' },
+  { simplified: '被击中时获得生命', traditional: '被擊中時獲得生命', english: 'Gain Life when Hit' },
+  { simplified: '被击中时获得能量护盾', traditional: '被擊中時獲得能量護盾', english: 'Gain Energy Shield when Hit' },
+  { simplified: '被击中时获得充能', traditional: '被擊中時獲得充能', english: 'Gain Charges when Hit' },
+  { simplified: '暴击时获得充能', traditional: '暴擊時獲得充能', english: 'Gain Charges on Critical Strike' },
+  { simplified: '格挡时获得充能', traditional: '格擋時獲得充能', english: 'Gain Charges on Block' },
+  { simplified: '使用技能时获得充能', traditional: '使用技能時獲得充能', english: 'Gain Charges when Using Skills' },
+  
+  // 充能球
+  { simplified: '充能球', traditional: '充能球', english: 'Charges' },
+  { simplified: '最大充能球', traditional: '最大充能球', english: 'Maximum Charges' },
+  { simplified: '充能球持续时间', traditional: '充能球持續時間', english: 'Charge Duration' },
+  { simplified: '充能球获得', traditional: '充能球獲得', english: 'Charge Gain' },
+  { simplified: '充能球消耗', traditional: '充能球消耗', english: 'Charge Consumption' },
+  { simplified: '耐力球', traditional: '耐力球', english: 'Endurance Charges' },
+  { simplified: '狂怒球', traditional: '狂怒球', english: 'Frenzy Charges' },
+  { simplified: '能量球', traditional: '能量球', english: 'Power Charges' },
+  { simplified: '最大耐力球', traditional: '最大耐力球', english: 'Maximum Endurance Charges' },
+  { simplified: '最大狂怒球', traditional: '最大狂怒球', english: 'Maximum Frenzy Charges' },
+  { simplified: '最大能量球', traditional: '最大能量球', english: 'Maximum Power Charges' },
+  { simplified: '获得耐力球', traditional: '獲得耐力球', english: 'Gain Endurance Charges' },
+  { simplified: '获得狂怒球', traditional: '獲得狂怒球', english: 'Gain Frenzy Charges' },
+  { simplified: '获得能量球', traditional: '獲得能量球', english: 'Gain Power Charges' }
+];
+
+// 为了兼容 content.js，创建一个从英语到简体中文的映射对象
+const translationsMap = {};
+translations.forEach(item => {
+  translationsMap[item.english] = item.simplified;
+});
+
+// 导出
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { translations, translationsMap };
+}

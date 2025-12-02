@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "英语翻译插件",
+  "version": "1.0.0",
+  "description": "将网页上固定的英语翻译成固定的中文",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "英语翻译插件"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["translations.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+  }
+}
+

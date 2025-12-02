@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Plugin Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Translation Plugin Test Page</h1>
+    <p>This page contains various English text elements that should be translated to Chinese by the plugin.</p>
+    
+    <div class="section">
+        <h2>Navigation</h2>
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a> |
+            <a href="#">Login</a> |
+            <a href="#">Sign Up</a>
+        </nav>
+    </div>
+    
+    <div class="section">
+        <h2>Buttons</h2>
+        <button>Submit</button>
+        <button>Cancel</button>
+        <button>Save</button>
+        <button>Delete</button>
+        <button>Edit</button>
+        <button>Add</button>
+        <button>Remove</button>
+        <button>Close</button>
+        <button>Search</button>
+    </div>
+    
+    <div class="section">
+        <h2>Form Elements</h2>
+        <form>
+            <div>
+                <label>Name: <input type="text" placeholder="Enter your name"></label>
+            </div>
+            <div>
+                <label>Email: <input type="email" placeholder="Email address"></label>
+            </div>
+            <div>
+                <label>Password: <input type="password" placeholder="Password"></label>
+            </div>
+            <div>
+                <label>Phone: <input type="tel" placeholder="Phone number"></label>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Cancel">
+            </div>
+        </form>
+    </div>
+    
+    <div class="section">
+        <h2>Common Phrases</h2>
+        <p>Click here to learn more</p>
+        <p>Read more about our services</p>
+        <p>View more products</p>
+        <p>Get started today</p>
+        <p>Try now for free</p>
+        <p>Buy now and save</p>
+    </div>
+    
+    <div class="section">
+        <h2>Status Messages</h2>
+        <p>Loading...</p>
+        <p>Error occurred</p>
+        <p>Success!</p>
+        <p>Warning: Please check your input</p>
+        <p>Please wait</p>
+        <p>Processing...</p>
+    </div>
+    
+    <div class="section">
+        <h2>Shopping Related</h2>
+        <p>Add to cart</p>
+        <p>Checkout</p>
+        <p>Order history</p>
+        <p>My account</p>
+        <p>Free shipping</p>
+        <p>Out of stock</p>
+        <p>In stock</p>
+    </div>
+    
+    <div class="section">
+        <h2>Social Media</h2>
+        <p>Like</p>
+        <p>Share</p>
+        <p>Comment</p>
+        <p>Follow</p>
+        <p>Unfollow</p>
+        <p>Reply</p>
+    </div>
+    
+    <div class="section">
+        <h2>Dynamic Content (will be translated when added)</h2>
+        <div id="dynamic-content"></div>
+        <button onclick="addContent()">Add More Content</button>
+    </div>
+    
+    <script>
+        function addContent() {
+            const div = document.getElementById('dynamic-content');
+            const p = document.createElement('p');
+            p.textContent = 'New content: Welcome to our website!';
+            div.appendChild(p);
+        }
+    </script>
+</body>
+</html>
+
